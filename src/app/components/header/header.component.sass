@@ -1,0 +1,19 @@
+@import '../../../assets/sass/variables'
+@import '../../../assets/sass/mixins'
+
+.header
+    +flex
+    +align-center
+    +justify-content(space-between)
+    background-color: $primary-color
+    padding: 0 1.5rem
+    height: 40px
+
+    &__logo
+        font: $h1-font
+        color: $white-color
+        margin: 0
+
+    &__close
+        color: $white-color
+        margin: 0

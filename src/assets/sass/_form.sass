@@ -1,0 +1,72 @@
+.form 
+    &__group
+        width: 100%
+        margin: 0 0 2rem 0
+        padding: 0
+        position: relative
+        
+    &__label
+        font: $label-font
+        font-family: $font-family
+
+    &__control 
+        width: 100%
+        margin: 0 0 0rem 0
+        padding: 0.5rem 1rem
+        height: $input-height
+        font: $input-font
+        border: 1px solid $input-border-color
+        box-shadow: none
+        outline: none
+        +border-radius(2px)
+
+        &:focus
+            box-shadow: none
+            outline: none
+
+        &.ng-invalid
+            border-color: $input-border-color
+ 
+.p-inputtext:enabled:hover, .p-inputtext.ng-dirty.ng-invalid
+    box-shadow: none
+    outline: none
+    border: 1px solid $input-border-color
+
+.p-inputtext:enabled:focus
+    box-shadow: none
+    outline: none
+    border: 1px solid $input-border-color
+
+// Error Msg
+.invalid-feedback
+    color: $error-color
+    position: absolute
+    border: 0
+    left: 0 
+
+// Checkbox 
+// .checkbox label 
+//     position: relative
+//     cursor: pointer
+
+.checkbox .p-checkbox .p-checkbox-box
+    width: 15px
+    height: 15px
+    border: 1px solid #B6B6B6
+
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover
+    border: 1px solid #B6B6B6
+
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus, .p-checkbox .p-checkbox-box.p-highlight, .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover
+    border: 1px solid #B6B6B6
+    box-shadow: none
+    background-color: $white-color
+    color: $primary-color
+
+.p-checkbox .p-checkbox-box .p-checkbox-icon
+    font-size: 9px
+    color: $primary-color
+    font-weight: bold
+        
+       
+    

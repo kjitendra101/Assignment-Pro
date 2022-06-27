@@ -1,0 +1,79 @@
+<app-header></app-header>
+<section class="main-outer">
+    
+    <div class="menu-outer">
+        <ul  class="menu">
+            <li class="menu__item"><a href="javascript:void(0);" class="menu__link active">Immunisation Alerts</a></li>
+            <li class="menu__item"><a href="javascript:void(0);" class="menu__link">Lab Alerts</a></li>
+            <li class="menu__item"><a href="javascript:void(0);" class="menu__link">DI Alerts</a></li>
+            <li class="menu__item"><a href="javascript:void(0);" class="menu__link">Procedure Alerts</a></li>
+            <li class="menu__item"><a href="javascript:void(0);" class="menu__link">RX Specific Alerts</a></li>
+            <li class="menu__item"><a href="javascript:void(0);" class="menu__link">DX Specific Alerts</a></li>
+            <li class="menu__item"><a href="javascript:void(0);" class="menu__link">Patient Specific Alerts</a></li>
+            
+        </ul>
+    </div>
+
+    <div class="immunization-outer">
+        <div class="immunization-outer__table">
+            <div class="immunization-outer__table-filter">
+                <div class="form__group">
+                    <label class="form__label">Name</label>
+                    <input class="form__control" type="text" pInputText />
+                </div>
+                <button (click)="removeItem()" class="btn btn--primary">Delete</button>
+            </div>
+            <div class="tables-resposnive">
+                <table class="tables-outer">
+                    <thead>
+                        <tr>
+                            <th width="40">
+                                <p-checkbox class="checkbox" name="groupname" value="val0"></p-checkbox>
+                            </th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Web Reference</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor=" let data of datas">
+                            <td>
+                                <p-checkbox name="groupname" class="checkbox" [binary]="true"
+                                    (onChange)="checkboxChange(data)"></p-checkbox>
+                            </td>
+                            <td>{{data.name}}</td>
+                            <td>{{data.description}}</td>
+                            <td>{{data.webReference}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="immunization-outer__form">
+            <form class="from" [formGroup]="immuForm">
+                <div class="form__group">
+                    <label class="form__label">Name</label>
+                    <input class="form__control" type="text" pInputText formControlName="name" required />
+                </div>
+                <div class="form__group">
+                    <label class="form__label">Description</label>
+                    <input class="form__control" type="text" pInputText formControlName="description" required />
+                </div>
+                <div class="form__group">
+                    <label class="form__label">Web Reference</label>
+                    <input class="form__control" type="text" pInputText formControlName="webReference" required />
+                </div>
+
+                <div class="form__group add-btns">
+                    <button pButton type="button" class="btn btn--primary" [disabled]="!immuForm.valid"
+                        (click)="addData()"> Add</button>
+                </div>
+            </form>
+            <div class="immunization-outer__button-block">
+                <a href="javascript:void(0);" class="btn btn--primary">Cancel</a>
+                <a href="javascript:void(0);" class="btn btn--primary ok-btn">OK</a>
+            </div>
+        </div>
+    </div>
+</section>

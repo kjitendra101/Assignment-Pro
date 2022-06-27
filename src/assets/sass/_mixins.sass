@@ -1,0 +1,151 @@
+// Clearfix
+
+=clearfix 
+  &:after
+    content: ''
+    display: table
+    clear: both
+
+=placeholder
+   &::-webkit-input-placeholder 
+       @content
+
+   &:-moz-placeholder
+      @content
+
+   &::-moz-placeholder
+      @content
+    
+   &:-ms-input-placeholder
+      @content
+
+// Border Radius
+=border-radius($radius)
+   -webkit-border-radius: $radius
+    border-radius: $radius
+
+// Transition
+=transition($transition)
+    -webkit-transition: $transition
+    transition: $transition
+
+// Transform
+=transform($transform)
+    -ms-transform: $transform
+    -webkit-transform: $transform
+    transform: $transform
+
+// Animation
+=animation($animation)
+    -webkit-animation: $animation
+    -moz-animation: $animation
+    -ms-animation: $animation
+    -o-animation: $animation
+    animation: $animation
+
+// Psuedo
+=pseudo($content: '', $position: absolute)
+    content: $content
+    position: $position
+
+// Grid
+=grid
+  display: grid
+
+// Flex
+=flex
+  display: flex
+
+=flex-wrap
+  flex-wrap: wrap
+
+=flex-direction($flex-direction)
+    @if $flex-direction == 'row'
+        -webkit-flex-direction: row
+        flex-direction: row
+    @else if $flex-direction == 'column'
+        -webkit-flex-direction: column
+        flex-direction: column
+
+=align-center
+    align-items: center
+
+=justify-content($justify-content)
+    @if $justify-content == 'center'
+        justify-content: center
+        -webkit-justify-content: center        
+    @else if $justify-content == 'space-between'
+        justify-content: space-between
+        -webkit-justify-content: space-between
+    @else if $justify-content == 'space-around'
+        justify-content: space-around
+        -webkit-justify-content: space-around
+    @else if $justify-content == 'space-evenly'
+        justify-content: space-evenly
+        -webkit-justify-content: space-evenly
+
+// Position Center
+=center($position)
+    position: absolute
+    z-index: 1
+    
+    @if $position == 'vertical'
+      top: 50%
+      -webkit-transform: translateY(-50%)
+      -ms-transform: translateY(-50%)
+      transform: translateY(-50%)
+    
+    @else if $position == 'horizontal'
+      left: 50%
+      -webkit-transform: translateX(-50%)
+      -ms-transform: translateX(-50%)
+      transform: translate(-50%)
+    
+    @else if $position == 'both'
+      top: 50%
+      left: 50%
+      -webkit-transform: translate(-50%, -50%)
+      -ms-transform: translate(-50%, -50%)
+      transform: translate(-50%, -50%)
+
+
+// Large Desktop
+@mixin desktop-xl
+   @media (min-width: #{$desktop-xl}) 
+       @content
+
+// Large Desktop
+@mixin desktop-lg 
+   @media (max-width: #{$desktop-lg}) 
+       @content
+
+// Desktop
+@mixin desktop
+   @media (max-width: #{$desktop}) 
+       @content
+
+// Large table
+@mixin tablet-lg
+   @media (max-width: #{$tablet-lg}) 
+       @content
+
+// Small table
+@mixin tablet
+   @media (max-width: #{$tablet}) 
+       @content
+
+// large Mobile
+@mixin mobile 
+   @media (max-width: #{$mobile}) 
+       @content
+
+// Small Mobile
+@mixin mobile-sm
+   @media (max-width: #{$mobile-sm}) 
+       @content
+
+
+
+
+   
+

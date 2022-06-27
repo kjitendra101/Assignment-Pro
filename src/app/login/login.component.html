@@ -1,0 +1,26 @@
+<div class="login-outer">
+    <div class="login-outer__block">
+        <h1>Login</h1>
+        <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form__group">
+                <label class="form__label">User Name</label>
+                <input class="form__control" type="text" pInputText formControlName="userid" />
+
+                <div *ngIf="submitted && errorLogin.userid.errors" class="invalid-feedback">
+                    <div *ngIf="errorLogin.userid.errors.required">Email is required</div>
+                </div>
+            </div>
+
+            <div class="form__group">
+                <label class="form__label">Password</label>
+                <input class="form__control" type="password" pInputText formControlName="password" />
+
+                <div *ngIf="submitted && errorLogin.password.errors" class="invalid-feedback">
+                    <div *ngIf="errorLogin.password.errors.required">Password is required</div>
+                </div>
+            </div>
+
+            <button pButton type="submit" class="btn btn--primary"> Submit</button>
+        </form>
+    </div>
+</div>

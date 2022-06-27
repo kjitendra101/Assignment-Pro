@@ -1,0 +1,179 @@
+@import '../../assets/sass/variables'
+@import '../../assets/sass/mixins'
+
+.menu-outer    
+    margin: 0 -15px
+
+    +tablet-lg
+        overflow-x: auto
+        overflow-y: hidden
+
+
+.menu
+    padding: 0 15px 0 15px
+    list-style: none
+    +flex
+    justify-content: flex-end    
+    border-bottom: 1px solid $primary-color
+
+    +tablet-lg
+        min-width: 763px
+    
+
+    &__item
+        margin: 0 0 -1px -4px
+        padding: 0
+        background: $primary-color      
+
+        &:first-child
+            +border-radius(5px 0 0 0 )
+
+            .menu__link
+                +border-radius(5px 0 0 0)
+
+                &::after
+                    display: none
+
+        &:last-child
+            +border-radius(0 5px 0 0 )
+
+            .menu__link
+                +border-radius(0 5px 0 0 )
+
+    &__link
+        margin: 0
+        padding: .5rem 1rem
+        +flex
+        color: $white-color
+        font-size: $font-11
+        font-weight: 600
+        position: relative
+        +transition(350ms ease)
+        border: 2px solid $primary-color
+        border-bottom: none
+
+        +tablet-lg
+            white-space: nowrap
+
+        &::after
+            content: ''
+            position: absolute
+            left: -2px
+            top: 5%
+            height: 90%
+            width: 1px
+            background-color: $white-color
+
+        &:hover, &.active
+            background-color: $white-color
+            color: $primary-color
+            border-radius: 5px 5px 0 0 !important
+
+.immunization-outer
+    +flex
+    +justify-content(space-between)
+    padding-top: 20px
+
+    +mobile
+        flex-wrap: wrap
+
+    &__table
+        width: 100%
+        max-width: 50%
+        position: relative
+        padding-right: 11px
+        min-height: calc(100vh - 62px)
+        padding-bottom: 1.5rem   
+
+        +mobile
+           max-width: 100% 
+           padding-right: 0
+           min-height: inherit
+
+        &::after
+            content: ''
+            position: absolute
+            top: -20px
+            right: 0
+            background-color: $input-border-color
+            width: 1px
+            height: calc(100% + 20px)
+
+            +mobile
+                display: none
+
+    &__table-filter
+        +flex
+        +justify-content(space-between)
+        +align-center
+        margin-bottom: 1.1rem
+
+        .form__group
+            max-width: 330px
+            margin-bottom: 0
+            +flex
+            +align-center
+
+            +tablet-lg
+                max-width: 240px
+
+            .form__label
+                margin-right: 2rem
+
+        .btn
+            margin-bottom: 0
+
+    &__form
+        width: 100%
+        max-width: 50%
+        padding-left: 11px
+
+        +mobile
+           max-width: 100% 
+           padding-left: 0
+           padding-top: 2rem
+           padding-bottom: 1.5rem
+
+        form.from
+            min-height: calc(100vh - 62px)
+
+            +desktop-xl
+                min-height: calc(100vh - 103px)
+
+            +mobile
+                min-height: inherit
+                
+            
+            .form__group
+                max-width: 410px
+                +flex
+                +align-center
+
+                .form__label
+                    margin-right: 2rem
+                    width: 100%
+                    max-width: 115px
+
+                &.add-btns
+                    justify-content: flex-end
+
+                    .btn    
+                        margin-bottom: 0
+
+
+    &__button-block
+        +flex
+        +align-center
+        justify-content: flex-end
+
+        .btn
+            margin-bottom: 0
+
+        .ok-btn
+            background-color: $primary-color
+            border-color:  #25A025
+            color: $white-color
+            margin-left: 10px
+
+            &:hover
+                background-color:  #25A025

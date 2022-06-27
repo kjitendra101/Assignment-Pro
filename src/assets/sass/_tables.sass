@@ -1,0 +1,49 @@
+.tables-outer
+    width: 100%
+    margin: 0
+    border-collapse: separate
+    border-spacing: 0
+    border: 1px solid $table-head-border-color
+    background-color: $white-color
+
+    tr
+        th
+            padding: .8rem 1rem
+            border: none
+            color: $white-color
+            
+            font: $table-head-font
+            text-align: left
+            outline: 0
+            border-bottom: 1px solid $table-head-border-color
+            border-right: 1px solid $table-head-border-color
+            background-color: $primary-color
+
+            &:last-child
+                border-right: none
+
+
+        td
+            padding: .8rem 1rem
+            border: none 
+            color: $black-color
+            background-color: transparent !important
+            font: $table-font
+            border-bottom: 1px solid $table-border-color
+            border-right: 1px solid $table-head-border-color
+            position: relative
+
+            &:last-child
+                border-right: none
+
+        &:last-child
+            td
+                border-bottom: none
+
+.tables-resposnive
+    +tablet-lg
+        overflow-x: auto
+
+    .tables-outer
+        +tablet-lg
+            min-width: 600px
